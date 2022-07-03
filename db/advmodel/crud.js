@@ -3,10 +3,6 @@
 const list = require('./advlist')
 
 // 增
-const newdata = {
-  url: '../../static/56.jpg',
-  href: 'http://xzz2026.top',
-}
 
 const insertMethods = async () => {
   const data = new list(newdata)

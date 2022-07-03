@@ -8,9 +8,10 @@ const mongoose = require('../db')
 const Schema = mongoose.Schema
 
 const mmSchema = new Schema({
-  allImg: [{url: String}] ,
+  mmimg: [{url: String}] ,
   name: String ,
   age: Number ,
+  priceRange: String,
   describe: String ,
 })
 

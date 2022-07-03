@@ -2,23 +2,42 @@
 
 
 const advList = require('../db/advmodel/advlist')
-const mmList = require('../db/advmodel/mmlist')
+const mmList = require('../db/mmmodel/mmlist')
 
 
 
 exports.getadv = (req, res) => {
 
-
-  const findMethods = async () => {
+  let skipNum = req.index * 10
+  const findAdv = async () => {
     const result = await advList.find({},{_id: 0})
-    console.log(result)
+    // console.log(result)
     res.send({
           message: '获取数据成功!',
           advList: result
       })
   }
 
-findMethods()
+  findAdv()
 
 
 }
+
+
+exports.getmm = (req, res) => {
+let skipNum = 0
+let limitNum = 0
+  const findMM = async () => {
+    const result = await mmList.find({},{_id: 0}).skip(skipNum).limit(limitNum)
+    // console.log(result)
+    res.send({
+          message: '获取数据成功!',
+          mmList: result
+      })
+  }
+
+  findMM()
+
+
+}
+
